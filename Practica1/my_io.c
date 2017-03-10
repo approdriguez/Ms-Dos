@@ -1,22 +1,16 @@
 #include <dos.h>
 #define BYTE unsigned char
-/* Selecciona el modo de video deseado */
-void selecciona_modo_video(BYTE modo)
+int khbit()
+/*
+@description: indica si se ha pulsado alguna tecla
+@args:
+@return: devuelve 0 si no se ha registrado una tecla pulsada
+          si hay una disponible el valor retornado es distinto de 0.
+*/
 {
 union REGS inregs, outregs;
-inregs.h.ah = 0x00;
-inregs.h.al = modo;
-int86(0x10,&inregs,&outregs);
-return;
+inregs.h.ah = 0x01;
+int86(0x16,&inregs,&outregs);
+return outregs.x.cflag;
 }
 
-char
-
-int main(){
-int mode;
-scanf("%d",&mode);
-selecciona_modo_video(mode);
-scanf("%d",&mode);
-if(mode==3)	selecciona_modo_video(mode);
-return 0;
-}
