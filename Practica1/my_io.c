@@ -11,6 +11,6 @@ int khbit()
 union REGS inregs, outregs;
 inregs.h.ah = 0x01;
 int86(0x16,&inregs,&outregs);
-return outregs.x.cflag;
+return (outregs.x.cflag)&0x01;
 }
 
