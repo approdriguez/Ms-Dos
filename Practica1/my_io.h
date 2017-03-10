@@ -1,4 +1,7 @@
+#include <dos.h>
 #define BYTE unsigned char
+
+int khbit();
 
 /*
 @description:
@@ -13,3 +16,4 @@ BYTE whereX(void);
 @return:
 */
 BYTE whereY(void);
+
