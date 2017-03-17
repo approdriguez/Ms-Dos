@@ -18,7 +18,6 @@ BYTE whereY(void){
   return outregs.h.dh;
 }
 
-
 void gotoXY(const BYTE x, const BYTE y){
   union REGS inregs, outregs;
   inregs.h.ah = 0x02;
