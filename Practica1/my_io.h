@@ -17,7 +17,7 @@ BYTE whereY(void);
 /*
 @description: mueve el cursor segun las coordenadas especificas por los
 argumentos x e y
-@param: x,y coordenadas
+@param: BYTE x,y coordenadas
 @return: void
 */
 void gotoXY(const BYTE x, const BYTE y);
@@ -30,8 +30,22 @@ void gotoXY(const BYTE x, const BYTE y);
 void setvideomode(BYTE mode);
 
 /*
-@description: obtiene el modo de video actual
-@param: mode en el que se indica que modo queremos
+@description: definimos el color de texto
+@param: BYTE color a cambiar
 @return: void
 */
-BYTE getvideomode(BYTE mode);
+void settextcolor(BYTE color);
+
+/*
+@description: definimos el color de fondo
+@param: BYTE color a cambiar
+@return: void
+*/
+void settextbackground(BYTE color);
+
+/*/*
+@description: Borra la pantalla,y la pinta del paramentro color
+@param: BYTE color a pintar la pantalla
+@return: void
+*/
+void clrscr(const BYTE color);

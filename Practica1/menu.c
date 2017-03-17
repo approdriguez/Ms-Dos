@@ -8,5 +8,7 @@ main(){
   selecciona_modo_video(mode);
   scanf("%d",&mode);
   if(mode==3)	selecciona_modo_video(mode);
+
+  printf("David is awesome\n" );
   return 0;
 }
