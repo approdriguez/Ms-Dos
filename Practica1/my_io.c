@@ -1,25 +1,14 @@
 #include <dos.h>
-#define BYTE unsigned char
-int khbit()
-/*
-@description: indica si se ha pulsado alguna tecla
-@args:
-@return: devuelve 0 si no se ha registrado una tecla pulsada
-          si hay una disponible el valor retornado es distinto de 0.
-*/
+#include "mi_io.h"
 
+
+int khbit()
 {
 union REGS inregs, outregs;
 inregs.h.ah = 0x01;
 int86(0x16,&inregs,&outregs);
 return outregs.x.cflag;
 }
-
-#include <dos.h>
-#include "mi_io.h"
-
-BYTE TEXT_COLOR;
-BYTE TEXT_BACKGROUND;
 
 BYTE whereX(void){
   union REGS inregs, outregs;

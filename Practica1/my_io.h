@@ -1,5 +1,6 @@
 #define BYTE unsigned char
-
+BYTE TEXT_COLOR;
+BYTE TEXT_BACKGROUND;
 /*
 @description: indica la posicion x del cursor actual
 @param: void
