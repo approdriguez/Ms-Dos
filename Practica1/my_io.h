@@ -43,9 +43,16 @@ void settextcolor(BYTE color);
 */
 void settextbackground(BYTE color);
 
-/*/*
+/*
 @description: Borra la pantalla,y la pinta del paramentro color
 @param: BYTE color a pintar la pantalla
 @return: void
 */
 void clrscr(const BYTE color);
+
+/*
+@description: Imprime una cadena de caracteres por pantalla
+@param: BYTE color para pintar cadena
+@return: void
+*/
+void cputs(const char *c, const BYTE color);

@@ -67,3 +67,13 @@ void clrscr(const BYTE color){
     gotoXY(0,0);
     return;
 }
+
+void cputs(const char * c, const BYTE color){
+  int i = 0;
+  while (c[i] != '\0'){
+      cputchar(c[i],color,1);
+      gotoXY(whereX()+1,whereY());
+      i++;
+  }
+  return;
+}
