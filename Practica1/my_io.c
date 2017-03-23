@@ -139,7 +139,7 @@ void scrollup(){
   inregs.h.dh = 480;       // Linea de la esquina superior inferior derecha
   inregs.h.dl = 640;  //Columna de la esquina inferior derecha
   int86(0x10,&inregs,&outregs);
-  //gotoxy(whereX,whereY-1); //Nos desplazamos una fila hacia arriba
+  gotoXY(whereX,whereY-1); //Nos desplazamos una fila hacia arriba
 }
 
 void scrolldown(){
@@ -152,7 +152,7 @@ void scrolldown(){
   inregs.h.dh = 480;       // Linea de la esquina superior inferior derecha
   inregs.h.dl = 640;  //Columna de la esquina inferior derecha
   int86(0x10,&inregs,&outregs);
-  //gotoxy(whereX,whereY+1); //Nos desplazamos una fila hacia abajo
+  gotoXY(whereX,whereY+1); //Nos desplazamos una fila hacia abajo
 }
 
 void cputchar(char p){
@@ -163,7 +163,7 @@ void cputchar(char p){
   inregs.h.bl = 15; // WHITE
   inregs.x.cx = 1;
   int86(0x10,&inregs,&outregs);
-  //gotoxy(whereX+1,whereY); //Nos desplazamos a la derecha de lo escrito
+  gotoXY(whereX+1,whereY); //Nos desplazamos a la derecha de lo escrito
 }
 
 
@@ -177,7 +177,7 @@ void getche(){
   int86(0x16,&inregs,&outregs);
   if(outregs.h.al != 0){
     cputchar(outregs.h.al);
-    //gotoxy(whereX+1,whereY); //Nos desplazamos a la derecha de lo escrito
+    gotoXY(whereX+1,whereY); //Nos desplazamos a la derecha de lo escrito
   }
 
 }
