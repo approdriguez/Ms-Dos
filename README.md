@@ -1,3 +1,3 @@
 # Ms-Dos
 
-Several interruptions in C, from Borland C library 'conio'.
+Several functions in C using Ms-Dos interruptions, from Borland C library 'conio'.
